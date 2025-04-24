@@ -15,6 +15,7 @@ export interface User {
   qualification?: string;
   contactNumber?: string;
   specialization?: string;
+  password?: string; // Added password field as optional
 }
 
 export interface TimeTableEntry {
