@@ -50,65 +50,59 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#9b87f5] via-[#7E69AB] to-[#1A1F2C] p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <div className="w-full max-w-md">
-        <Card className="shadow-2xl border-none overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-[#6E59A5] to-[#8B5CF6] text-white rounded-t-lg py-6">
-            <CardTitle className="text-3xl font-bold text-center tracking-wider">
-              Academic Timetable Manager
-            </CardTitle>
-            <CardDescription className="text-gray-100 text-center opacity-80">
-              Elevate Your Academic Experience
-            </CardDescription>
+        <Card>
+          <CardHeader className="bg-academic-primary text-white rounded-t-lg">
+            <CardTitle className="text-2xl font-bold text-center">Academic Timetable Manager</CardTitle>
+            <CardDescription className="text-gray-200 text-center">Sign in to access your timetable</CardDescription>
           </CardHeader>
-          <CardContent className="p-8 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-3">
-                <Label htmlFor="email" className="text-white/80">Email</Label>
+          <CardContent className="p-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder-white/50 focus:ring-2 focus:ring-[#D6BCFA]"
                   required
                 />
               </div>
-              <div className="space-y-3">
-                <Label htmlFor="password" className="text-white/80">Password</Label>
+              <div className="space-y-2">
+                <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"
                   type="password"
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder-white/50 focus:ring-2 focus:ring-[#D6BCFA]"
                   required
                 />
               </div>
               <Button 
                 type="submit" 
-                className="w-full bg-gradient-to-r from-[#F97316] to-[#D946EF] text-white hover:from-[#D946EF] hover:to-[#F97316] transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+                className="w-full bg-academic-primary hover:bg-academic-secondary"
                 disabled={isLoading}
               >
                 {isLoading ? 'Signing in...' : 'Sign In'}
               </Button>
             </form>
           </CardContent>
-          <CardFooter className="flex flex-col space-y-4 bg-gradient-to-r from-[#6E59A5]/20 to-[#8B5CF6]/20 p-6">
-            <div className="text-sm text-white/70 text-center mb-2">Demo Login Options:</div>
-            <div className="flex gap-4 w-full">
+          <CardFooter className="flex flex-col space-y-2">
+            <div className="text-sm text-gray-500 text-center mb-2">For demo purpose:</div>
+            <div className="flex gap-2 w-full">
               <Button 
                 variant="outline" 
-                className="flex-1 text-sm border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-105"
+                className="flex-1 text-sm border-academic-primary text-academic-primary hover:text-white hover:bg-academic-primary"
                 onClick={() => handleDemoLogin('student')}
               >
                 Demo Student Login
               </Button>
               <Button 
                 variant="outline" 
-                className="flex-1 text-sm border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-105"
+                className="flex-1 text-sm border-academic-primary text-academic-primary hover:text-white hover:bg-academic-primary"
                 onClick={() => handleDemoLogin('teacher')}
               >
                 Demo Teacher Login
