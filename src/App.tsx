@@ -8,7 +8,6 @@ import Index from "./pages/Index";
 import StudentDashboard from "./pages/StudentDashboard";
 import TeacherDashboard from "./pages/TeacherDashboard";
 import NotFound from "./pages/NotFound";
-import SystemArchitecture from "./pages/SystemArchitecture";
 
 const queryClient = new QueryClient();
 
@@ -22,8 +21,6 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/student-dashboard" element={<StudentDashboard />} />
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
-          <Route path="/architecture" element={<SystemArchitecture />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
